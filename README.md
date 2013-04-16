@@ -64,9 +64,9 @@ And then execute:
 * `--version`: Show help/version info
 * `--log-level LEVEL` `(debug|info|warn|error|fatal)` `(Default: info)`: Set the logging level
 
-##Arguments:
+###Arguments:
 
 * `url`: URL of the Web API to use
 
-## Author: Matt Freer matt.freer@gmail.com
+## Author: Matt Freer (matt.freer@gmail.com)
 Copyright:: Copyright (c) 2013 Matt Freer
