@@ -64,9 +64,15 @@ And then execute:
 * `--version`: Show help/version info
 * `--log-level LEVEL` `(debug|info|warn|error|fatal)` `(Default: info)`: Set the logging level
 
-###Arguments:
+### Arguments:
 
 * `url`: URL of the Web API to use
+
+## Development Tests
+
+If you Clone or Fork this project you can run the intergration (`cucumber`) and unit tests (`rspec`) by running:
+
+    bundle exec rake
 
 ## Author: Matt Freer (matt.freer@gmail.com)
 Copyright:: Copyright (c) 2013 Matt Freer
