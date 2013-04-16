@@ -1,6 +1,4 @@
 require "metrics/version"
-require "metrics/requester"
-require "metrics/response"
 require "metrics/cluster"
 require "metrics/machine"
 require "metrics/machine_list"
