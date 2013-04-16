@@ -1,0 +1,50 @@
+#!/usr/bin/env ruby
+
+require 'optparse'
+require 'methadone'
+require 'metrics'
+
+class App
+  include Methadone::Main
+  include Methadone::CLILogging
+
+  main do |url|
+    cluster = create_cluster(url)
+    if cluster.valid?
+      display_metrics(cluster, options[:pretty])
+    else
+      exit_now!("#{ cluster.errors.full_messages.first }")
+    end
+  end
+
+  def self.create_cluster(url)
+    Metrics::Cluster.new(:url => url)
+  end
+
+  def self.display_metrics(cluster, pretty)
+    metrics = cluster.metrics_summary
+    formatter(pretty).show(metrics)
+  end
+
+  def self.formatter(pretty)
+    if pretty
+      Metrics::Formatter::PrettyFormatter.new
+    else
+      Metrics::Formatter::UglyFormatter.new
+    end
+  end
+
+  description "CLi for an existing machine metrics JSON Web API specification"
+
+  # Flags
+  on("--pretty","Make the metrics pretty")
+
+  # Arguments
+  arg :url, "URL of the Web API to use"
+
+  version Metrics::VERSION
+
+  use_log_level_option
+
+  go!
+end
