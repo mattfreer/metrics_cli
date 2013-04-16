@@ -47,17 +47,16 @@ Or if you specify the `--pretty` option the metrics summary is output in the fol
 
 Add this line to your application's Gemfile:
 
-    gem 'metrics'
+    gem 'metrics' :git => 'git@github.com:mattfreer/metrics_cli.git'
 
 And then execute:
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install metrics
+    $ bundle install
 
 ## Usage
+
+    $ bundle exec metrics [options] url
+
 ### Options:
 
 * `-h, --help`: Show command line help
@@ -68,14 +67,6 @@ Or install it yourself as:
 ##Arguments:
 
 * `url`: URL of the Web API to use
-
-## Contributing
-
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
 
 ## Author: Matt Freer matt.freer@gmail.com
 Copyright:: Copyright (c) 2013 Matt Freer
