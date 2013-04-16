@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    metrics (0.2.0)
+    metrics (0.3.0)
       dm-validations
       formatador
       ipaddress
